@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Merriweather", serif;
+  --font-mono: "Nunito Sans", monospace;
+  --font-body: "Poppins", sans-serif;
+  --font-heading: "Roboto Slab", serif;
+}
