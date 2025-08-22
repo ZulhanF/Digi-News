@@ -30,27 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     articlesWithImages.slice(0, 6).forEach((article) => {
-      const headline = document.createElement("div");
-      headline.className = "headline bg-black flex carousel-item";
-
-      headline.innerHTML = `          <div class="local-1 flex flex-col gap-2 max-w-90 bg-neutral-100">
-				<img src="${article.urlToImage}" class="max-h-50" alt="${article.title}" />
-				<a href="${article.url}" class="hover:underline">
-					<h1
-						class="text-black text-md font-medium line-clamp-2 hover:underline"
-					>
-						${article.title}
-					</h1>
-				</a>
-
-				<p class="text-xs text-black line-clamp-2">
-				${article.description ?? ""}
-				</p>
-				<p class="text-xs text-neutral-500 mt-auto">${article.source?.name ?? ""} | ${new Date(article.publishedAt).toLocaleString()}</p>
-
-			  </div>`;
-
-      container.appendChild(headline);
+      const wrapper = document.createElement("div");
+      // Grid item responsive: full width mobile, keep natural width desktop
+      wrapper.className = "w-full";
+      wrapper.innerHTML = `<div class="local-1 flex flex-col gap-2 w-full bg-neutral-100 p-2 md:p-0">
+        <img src="${article.urlToImage}" class="w-full h-44 md:h-50 object-cover" alt="${article.title}" />
+        <a href="${article.url}" class="hover:underline">
+          <h1 class="text-black text-md font-medium line-clamp-2 hover:underline">${article.title}</h1>
+        </a>
+        <p class="text-xs text-black line-clamp-2">${article.description ?? ""}</p>
+        <p class="text-xs text-neutral-500 mt-auto">${article.source?.name ?? ""} | ${new Date(article.publishedAt).toLocaleString()}</p>
+      </div>`;
+      container.appendChild(wrapper);
     });
   }
 

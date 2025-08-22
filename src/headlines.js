@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		articles.forEach((article, index) => {
 			const headline = document.createElement("div");
-			headline.className = "headline bg-black flex flex-col md:flex-row carousel-item w-full";
+			headline.className = "headline bg-black flex flex-col md:flex-row carousel-item w-full snap-start px-10";
 
 			headline.innerHTML = `<div class="title flex flex-col gap-2 m-4 md:m-10 max-h-65 min-w-0" id="${
 				index + 1

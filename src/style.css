@@ -8,3 +8,5 @@
   --font-body: "Poppins", sans-serif;
   --font-heading: "Roboto Slab", serif;
 }
+
+/* Semua responsivitas dialihkan ke utility classes Tailwind/DaisyUI */
